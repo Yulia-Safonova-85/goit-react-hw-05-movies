@@ -5,10 +5,15 @@ import { Suspense } from "react";
 import { Loader } from "components/Loader/Loader";
 
 const StyledLink  = styled(NavLink)`
-color: black;
+padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+olor: black;
+font-weight: 500;
 
 &.active {
-    color: orangered;
+    color: white;
+    background-color: orangered;
 }
 `;
 
