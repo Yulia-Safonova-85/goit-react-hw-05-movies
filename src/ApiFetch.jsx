@@ -5,6 +5,7 @@ axios.defaults.params = {
     api_key: 'd3ed4ffb60d13827c3ec286dc736d3f2',
     include_adult: false,
 };
+// https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 

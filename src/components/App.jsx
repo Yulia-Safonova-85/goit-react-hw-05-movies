@@ -1,13 +1,15 @@
-import { Layout } from "page/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
-import Home from "page/Home/Home";
-import MovieDetails from "page/MovieDetail/MovieDetails";
-import Movies from "page/Movie/Movies";
-import Cast from "./Cast/Cast";
-import Reviews from "./Reviews/Reviews";
+import { lazy } from "react";
 
-// API_KEY = `d3ed4ffb60d13827c3ec286dc736d3f2`;
-// BASE_URL =`https://api.themoviedb.org/3/movie/550?api_key=d3ed4ffb60d13827c3ec286dc736d3f2`;
+const Layout = lazy(() => import("../page/Layout/Layout"));
+const Home = lazy(() => import("../page/Home/Home"));
+const Movies = lazy(() => import("../page/Movie/Movies"));
+const MovieDetails = lazy(() => import("../page/MovieDetail/MovieDetails"));
+const Cast = lazy(() => import("../components/Cast/Cast"));
+const Reviews = lazy(() => import("../components/Reviews/Reviews"));
+const NotFound = lazy(() => import("../page/NotFound"));
+
+
 
 export const App = () => {
   return (
@@ -20,7 +22,7 @@ export const App = () => {
            <Route path="reviews" element={<Reviews/>}/>
            </Route>
         </Route> 
-      
+      <Route path="*" element={<NotFound/>}/>
       </Routes>
   
   );

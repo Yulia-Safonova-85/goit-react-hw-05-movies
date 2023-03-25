@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { fetchCast } from "ApiFetch";
  
+import {CastItem, CastImg} from './Cast.styled';
+
 const Cast =()=> {
 const {movieId}= useParams();
 const [credits, setCredits]=useState([]);
@@ -18,11 +20,11 @@ return(
                 {credits.map(({id, name, character, photo})=>
                 {
                     return (
-                        <li key={id}>
-<img src={photo} alt={name} />
-<p>Name:{name}</p>
-<p>Character:{character}</p>
-                        </li>
+                        <CastItem key={id}>
+<CastImg src={photo} alt={name} />
+<p>Name: {name}</p>
+<p>Character: {character}</p>
+                        </CastItem>
                     )
                 }
                 )}
